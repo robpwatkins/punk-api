@@ -3,16 +3,18 @@ import React from 'react';
 import './App.css';
 
 class LikeButton extends React.Component {
-  state = {isLiked: false}
+  state = {
+    isLiked: false,
+    likedBeers: []
+  }
 
   render() {
-    // console.log(this.props.beername)
+    console.log(this.state)
     return (
-    <button onClick={() => this.likedBeers}>{ this.state.isLiked ? "Liked!" : "Like"}</button>
+    <button onClick={() => this.setState({isLiked: true, likedBeers: [ ...this.state.likedBeers, this.props.beername]})}>{ this.state.isLiked ? "Liked!" : "Like"}</button>
     )
   }
 }
-
 
 class App extends React.Component {
   state = {
