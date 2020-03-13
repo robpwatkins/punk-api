@@ -2,12 +2,13 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
-class HandleLikes extends React.Component {
+class LikeButton extends React.Component {
   state = {isLiked: false}
 
   render() {
+    console.log(this.props.beername)
     return (
-    <button onClick={() => console.log(this.state)}>Like</button>
+    <button onClick={() => this.setState({isLiked: true})}>{ this.state.isLiked ? "Liked!" : "Like"}</button>
     )
   }
 }
@@ -35,7 +36,7 @@ class App extends React.Component {
             return (
               <div key={index}>
                 <h1>{beer.name}</h1>
-                <HandleLikes />
+                <LikeButton beername={beer.name}/>
                 <h2>{'ABV: ' + beer.abv}</h2>
                 <h2>{beer.tagline}</h2>
                 <h4>{beer.description}</h4>
