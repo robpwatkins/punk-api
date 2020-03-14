@@ -43,26 +43,24 @@ class App extends React.Component {
     console.log(this.state.beers[0]);
   return (
     <div className="App">
-      <header className="App-header">
-        <div>
-          { this.state.beers.map((beer, index) => { 
-            return (
-              <div className="mainBox" key={index}>
-                <div className="flexBox">
-                <div className="leftBox">
+      <div>
+        { this.state.beers.map((beer, index) => { 
+          return (
+            <div className="mainBox" key={index}>
+              <div className="centerBox">
+                <div>
                   <h1>{beer.name}</h1>
                   <LikeButton beername={beer.name}/>
-                  <h2>{'ABV: ' + beer.abv}</h2>
-                  <h2>{beer.tagline}</h2>
+                  <h3>{'ABV: ' + beer.abv}</h3>
+                  <h3>{beer.tagline}</h3>
                 </div>
-                <img id="img" src={beer.image_url} alt=""></img>
-                </div>
-                <h4>{beer.description}</h4>
+              <img id="img" src={beer.image_url} alt=""></img>
               </div>
-            )
-          })}
-        </div>
-      </header>
+              <h5>{beer.description}</h5>
+            </div>
+          )
+        })}
+      </div>
     </div>
   );
   }
