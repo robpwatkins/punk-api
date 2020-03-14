@@ -28,8 +28,18 @@
   color: #61dafb;
 }
 
+.mainBox {
+  padding: 25px;
+}
+
 #img {
   height: 50vh;
+  margin: 0 auto;
+}
+
+.flexBox {
+  display: flex;
+  margin: 0 75px;
 }
 
 @keyframes App-logo-spin {

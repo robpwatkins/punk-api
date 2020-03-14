@@ -8,10 +8,16 @@ class LikeButton extends React.Component {
     likedBeers: []
   }
 
+  likeBeer = () => {
+    this.setState({
+      isLiked: true
+    })
+  }
+
   render() {
     console.log(this.state)
     return (
-    <button onClick={() => this.setState({isLiked: true, likedBeers: [ ...this.state.likedBeers, this.props.beername]})}>{ this.state.isLiked ? "Liked!" : "Like"}</button>
+    <button onClick={() => this.likeBeer()}>{ this.state.isLiked ? "Liked!" : "Like"}</button>
     )
   }
 }
@@ -41,12 +47,16 @@ class App extends React.Component {
         <div>
           { this.state.beers.map((beer, index) => { 
             return (
-              <div key={index}>
-                <h1>{beer.name}</h1>
-                <LikeButton beername={beer.name}/>
-                <h2>{'ABV: ' + beer.abv}</h2>
-                <h2>{beer.tagline}</h2>
+              <div className="mainBox" key={index}>
+                <div className="flexBox">
+                <div className="leftBox">
+                  <h1>{beer.name}</h1>
+                  <LikeButton beername={beer.name}/>
+                  <h2>{'ABV: ' + beer.abv}</h2>
+                  <h2>{beer.tagline}</h2>
+                </div>
                 <img id="img" src={beer.image_url} alt=""></img>
+                </div>
                 <h4>{beer.description}</h4>
               </div>
             )
