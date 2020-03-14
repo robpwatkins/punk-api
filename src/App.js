@@ -1,34 +1,11 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
-
-class LikeButton extends React.Component {
-  state = {
-    isLiked: false,
-    likedBeers: []
-  }
-
-  likeBeer = () => {
-    this.setState({
-      isLiked: true
-    })
-  }
-
-  render() {
-    console.log(this.state)
-    return (
-    <button onClick={() => this.likeBeer()}>{ this.state.isLiked ? "Liked!" : "Like"}</button>
-    )
-  }
-}
+import LikeButton from './LikeButton';
 
 class App extends React.Component {
   state = {
-    beers: []
-  }
-
-  likedBeers = () => {
-    console.log('heyoo');
+    beers: [],
+    likedBeers: []
   }
 
   componentDidMount() {
@@ -39,8 +16,13 @@ class App extends React.Component {
     });
   }
   
+  addLikedBeer = (likedBeer) => {
+    this.setState( {likedBeers: [ ...this.state.likedBeers, likedBeer]} )
+    console.log(this.state);
+  }
+
   render() {
-    console.log(this.state.beers[0]);
+    // console.log(this.state.beers[0]);
   return (
     <div className="App">
       <div>
@@ -50,7 +32,7 @@ class App extends React.Component {
               <div className="centerBox">
                 <div>
                   <h1>{beer.name}</h1>
-                  <LikeButton beername={beer.name}/>
+                  <LikeButton likedbeers={this.state.likedBeers} addthebeer={this.addLikedBeer} beername={beer.name}/>
                   <h3>{'ABV: ' + beer.abv}</h3>
                   <h3>{beer.tagline}</h3>
                 </div>

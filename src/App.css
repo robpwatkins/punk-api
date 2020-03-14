@@ -10,6 +10,10 @@
   padding: 45px;
 }
 
+button {
+  margin-bottom: 10px;
+}
+
 #img {
   height: 50vh;
   margin: 0 auto;
@@ -17,4 +21,12 @@
 
 .centerBox {
   display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+h6 {
+  margin: 0;
 }
