@@ -17,6 +17,7 @@ button {
 #img {
   height: 50vh;
   margin: 0 auto;
+  padding: 15px;
 }
 
 .centerBox {

@@ -18,8 +18,7 @@ export default class LikeButton extends React.Component {
     return (
       <div>
         <button onClick={ () => this.likeBeer() }>{ this.state.isLiked ? 'Liked!' : 'Like' }</button>
-        <div>{ this.state.isLiked ? <LikedBeers likedbeers={ this.props.likedbeers }/> : '' }
-        </div>
+        <LikedBeers isliked={ this.state.isLiked } likedbeers={ this.props.likedbeers } />
       </div>
     )
   }

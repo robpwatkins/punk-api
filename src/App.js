@@ -18,7 +18,7 @@ class App extends React.Component {
   
   addLikedBeer = (likedBeer) => {
     this.setState( {likedBeers: [ ...this.state.likedBeers, likedBeer]} )
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   render() {
