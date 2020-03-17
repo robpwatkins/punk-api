@@ -5,7 +5,7 @@ export default function LikedBeers(props) {
   if (props.isliked) {
     return (
       <div className="likedBeers">
-        <h5>Your Liked Beers:</h5>
+        <h5>Liked Beers:</h5>
         <div>
           {props.likedbeers.map(likedBeer => {
             return (
