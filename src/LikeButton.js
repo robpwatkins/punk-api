@@ -7,11 +7,11 @@ export default class LikeButton extends React.Component {
     isLiked: false,
   }
 
-  likeBeer = () => {
+  likeBeer = (props) => {
     this.setState({
       isLiked: true
     })
-    this.props.addthebeer(this.props.beername)
+    this.props.addthebeer(props.state.input)
   }
 
   render() {
